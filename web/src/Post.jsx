@@ -1,7 +1,14 @@
-import React from 'react';
-import { Card, CardContent, Typography } from '@material-ui/core';
+import React, { useState } from 'react';
+import ReactMarkdown from 'react-markdown';
+import { Card, CardContent, Typography, Link } from '@material-ui/core';
 
 const Post = (props) => {
+  const [markdown, setMarkDown] = useState(false);
+
+  const clickTitle = () => {
+    setMarkDown(!markdown);
+  };
+
   return (
     <Card>
       <CardContent>
@@ -12,7 +19,15 @@ const Post = (props) => {
           <Typography variant="body1" color="textSecondary">
             {props.author.name}
           </Typography>
-          <Typography variant="h5">{props.title}</Typography>
+          <Typography variant="h5">
+            <Link onClick={clickTitle}>{props.title}</Link>
+            {markdown && (
+              <>
+                <ReactMarkdown>{props.title}</ReactMarkdown>
+                <ReactMarkdown>{props.body}</ReactMarkdown>
+              </>
+            )}
+          </Typography>
           <Typography variant="body2">{props.body}</Typography>
         </div>
       </CardContent>
