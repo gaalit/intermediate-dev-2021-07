@@ -6,7 +6,8 @@ const PostsList = (props) => {
   console.log('POSTS', posts);
 
   return (
-    <div>
+    <>
+      <h3>All Posts:</h3>
       {posts.map((post) => {
         return (
           <Post
@@ -18,7 +19,7 @@ const PostsList = (props) => {
           />
         );
       })}
-    </div>
+    </>
   );
 };
 

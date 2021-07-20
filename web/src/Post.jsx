@@ -1,14 +1,23 @@
 import React from 'react';
+import { Card, CardContent, Typography } from '@material-ui/core';
 
 const Post = (props) => {
   console.log('PRROOOPS', props);
   return (
-    <div>
-      <h1>{props.title}</h1>
-      <h2>{props.body}</h2>
-      <h3>{props.date}</h3>
-      <h4>{props.author.name}</h4>
-    </div>
+    <Card>
+      <CardContent>
+        <div>
+          <Typography variant="body2" color="textSecondary">
+            {props.date}
+          </Typography>
+          <Typography variant="body1" color="textSecondary">
+            {props.author.name}
+          </Typography>
+          <Typography variant="h5">{props.title}</Typography>
+          <Typography variant="body2">{props.body}</Typography>
+        </div>
+      </CardContent>
+    </Card>
   );
 };
 
