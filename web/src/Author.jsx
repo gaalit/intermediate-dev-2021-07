@@ -18,7 +18,9 @@ const Author = ({ name, posts }) => {
     }
   };
 
-  const posted = posts.filter((post) => post.author.name === value);
+  const posted = posts
+    ? posts.filter((post) => post.author.name === value)
+    : '';
 
   return (
     <div>
