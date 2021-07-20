@@ -2,7 +2,6 @@ import React from 'react';
 import { Card, CardContent, Typography } from '@material-ui/core';
 
 const Post = (props) => {
-  console.log('PRROOOPS', props);
   return (
     <Card>
       <CardContent>
