@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import publishDateReverseOrder from './helperFunctions/publishDateReverseOrder';
 // import showUniqueAuthor from './helperFunctions/showUniqueAuthor';
-import PostsList from './Posts';
+import Posts from './Posts';
 import './App.css';
 
 export const App = () => {
@@ -24,5 +24,5 @@ export const App = () => {
     fetchData();
   }, []);
 
-  return <PostsList posts={posts} />;
+  return <Posts posts={posts} />;
 };
